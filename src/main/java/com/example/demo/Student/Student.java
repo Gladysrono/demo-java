@@ -1,6 +1,10 @@
-package com.example.demo.Model;
+package com.example.demo.Student;
+
+import org.springframework.boot.autoconfigure.domain.EntityScan;
 
 import java.time.LocalDate;
+
+@EntityScan
 
 public class Student {
     private  long id;
