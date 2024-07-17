@@ -1,14 +1,18 @@
 package com.example.demo.Student;
 
-import org.springframework.boot.autoconfigure.domain.EntityScan;
+import jakarta.persistence.Entity;
+import jakarta.persistence.GeneratedValue;
+import jakarta.persistence.GenerationType;
+import jakarta.persistence.Id;
 
 import java.time.LocalDate;
 
-@EntityScan
-
+@Entity
 public class Student {
-    private  long id;
-    private  String name;
+    @Id
+    @GeneratedValue(strategy = GenerationType.IDENTITY)
+    private long id;
+    private String name;
     private String email;
     private LocalDate dob;
     private Integer age;
@@ -16,10 +20,7 @@ public class Student {
     public Student() {
     }
 
-    public Student(long id,
-                   String name,
-                   String email, LocalDate dob,
-                   Integer age) {
+    public Student(long id, String name, String email, LocalDate dob, Integer age) {
         this.id = id;
         this.name = name;
         this.email = email;
